@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 
 const celsiusToFahrenheit = ((cel)=>cel*1.8 + 32);
-
+app.get('/', (req, res) => {
+    res.send("Hello World");
+});
 app.get('/convert',(req,res)=>{
     const {celsius} = req.query;
     if(!celsius)
@@ -14,6 +16,4 @@ app.get('/convert',(req,res)=>{
     res.json({celsius:Number(celsius),farenhite,massage:"Success"});
 })
 
-
-console.log("Hello World");
 module.exports = app;
