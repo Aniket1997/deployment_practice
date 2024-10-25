@@ -3,9 +3,7 @@ const cors = require('cors');  // Import cors package
 const app = express();
 
 // Enable CORS for all routes
-app.use(cors({
-    origin: 'https://fantastic-semifreddo-1b04e5.netlify.app/'
-}));
+app.use(cors());
 
 const celsiusToFahrenheit = (celsius) => celsius * 1.8 + 32;
 
