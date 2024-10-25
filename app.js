@@ -1,19 +1,23 @@
 const express = require('express');
+const cors = require('cors');  // Import cors package
 const app = express();
 
-const celsiusToFahrenheit = ((cel)=>cel*1.8 + 32);
+// Enable CORS for all routes
+app.use(cors());
+
+const celsiusToFahrenheit = (celsius) => celsius * 1.8 + 32;
+
 app.get('/', (req, res) => {
     res.send("Hello World");
 });
-app.get('/convert',(req,res)=>{
-    const {celsius} = req.query;
-    if(!celsius)
-    {
-        return req.statusCode(400).json({error:"Please provide value"});
-    }
-    const farenhite = celsiusToFahrenheit(Number(celsius));
 
-    res.json({celsius:Number(celsius),farenhite,massage:"Success"});
-})
+app.get('/convert', (req, res) => {
+    const { celsius } = req.query;
+    if (!celsius) {
+        return res.status(400).json({ error: "Please provide a celsius value" });
+    }
+    const fahrenheit = celsiusToFahrenheit(Number(celsius));
+    res.json({ celsius: Number(celsius), fahrenheit, message: "Success" });
+});
 
 module.exports = app;
