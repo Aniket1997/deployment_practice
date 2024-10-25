@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './index.js', // Path to your main server file
+    entry: './app.js', // Path to your main server file
     target: 'node',      // Set target to 'node' for a Node.js environment
     output: {
         path: path.resolve(__dirname, 'dist'),

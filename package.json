@@ -4,7 +4,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx webpack",
+    "build": "npx webpack",  
+    "vercel-build": "npm run build",  
     "start": "node dist/bundle.js"
   },
   "keywords": [],
