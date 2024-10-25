@@ -14,9 +14,7 @@ app.get('/convert',(req,res)=>{
     res.json({celsius:Number(celsius),farenhite,massage:"Success"});
 })
 
-const PORT = 8000;
-app.listen(PORT,()=>{
-    console.log(`Server is running ${PORT}`);
-})
 
 console.log("Hello World");
+
+module.exports = app;
